@@ -1,0 +1,39 @@
+import { useContext } from 'react';
+import { MyContext } from './context/index.jsx';
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import'./styles/app.css'
+
+import Stage1 from './component/stage_one';
+import Stage2 from './component/stage_two';
+
+
+
+const App =() => {
+
+const context = useContext(MyContext);
+
+  return (<>
+
+<div className="wrapper">
+<div className="center-wrapper ">
+  <h1>who pays the bill</h1>
+  {context.stage ===1 ?
+   <Stage1 />
+    :
+   <Stage2 />}
+
+</div>
+  
+
+ 
+</div>
+
+
+
+
+  </>)
+}
+
+export default App;
